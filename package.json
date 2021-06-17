@@ -5,6 +5,9 @@
   "private": false,
   "author": "Christopher Gjelten (itschip, chip)",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --config ./webpack/game/webpack.game.js --mode production"
+  },
   "devDependencies": {
     "@citizenfx/client": "^2.0.4081-1",
     "@citizenfx/server": "^2.0.4081-1",
@@ -13,7 +16,11 @@
     "@typescript-eslint/parser": "^4.27.0",
     "eslint": "^7.28.0",
     "prettier": "^2.3.1",
-    "pretty-quick": "^3.1.0"
+    "pretty-quick": "^3.1.0",
+    "remove-files-webpack-plugin": "^1.4.5",
+    "ts-loader": "^9.2.3",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2"
   },
   "dependencies": {
     "typescript": "^4.3.2"
