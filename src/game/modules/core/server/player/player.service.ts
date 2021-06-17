@@ -9,21 +9,31 @@ export class _PlayerService {
     this.PlayerMapIdentifier = new Map<string, Player>();
   }
 
-  addPlayerToMap(pSource: number, player: Player): void {
+  private addPlayerToMap(pSource: number, player: Player): void {
     this.PlayerMapSource.set(pSource, player);
     this.PlayerMapIdentifier.set(player.getIdentifier(), player);
   }
 
-  createNewPlayer(src: number): void {
-    const username = GetPlayerName(src.toString());
+  private deletePlayerFromMap(pSource: number, pIdentifier: string): void {
+    this.PlayerMapSource.delete(pSource);
+    this.PlayerMapIdentifier.delete(pIdentifier);
+  }
+
+  createNewPlayer(pSource: number): void {
+    const username = GetPlayerName(pSource.toString());
 
     const player = new Player({
       identifier: '3453434345',
-      source: src,
+      source: pSource,
       username,
     });
 
-    this.addPlayerToMap(src, player);
+    this.addPlayerToMap(pSource, player);
+  }
+
+  unloadPlayer(pSource: number): void {
+    const player = this.PlayerMapSource.get(pSource);
+    this.deletePlayerFromMap(pSource, player?.getIdentifier());
   }
 
   getPlayerFromSource(pSource: number): Player | null {
