@@ -33,7 +33,7 @@ export class _PlayerService {
 
   unloadPlayer(pSource: number): void {
     const player = this.PlayerMapSource.get(pSource);
-    this.deletePlayerFromMap(pSource, player?.getIdentifier());
+    this.deletePlayerFromMap(pSource, player.getIdentifier());
   }
 
   getPlayerFromSource(pSource: number): Player | null {
