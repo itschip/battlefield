@@ -6,7 +6,10 @@
   "author": "Christopher Gjelten (itschip, chip)",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config ./webpack/game/webpack.game.js --mode production"
+    "build": "webpack --config ./webpack/game/webpack.game.js --mode production",
+    "watch": "webpack --config ./webpack/game/webpack.game.js --mode development",
+    "ui:build": "webpack --config ./webpack/ui/webpack.ui.js --mode production",
+    "ui:serve": "webpack serve --config ./webpack/ui/webpack.ui.js --mode development"
   },
   "devDependencies": {
     "@citizenfx/client": "^2.0.4081-1",
