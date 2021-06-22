@@ -3,9 +3,10 @@ import 'reflect-metadata';
 interface CommandProps {
   command: string;
   restricted: boolean;
+  useKeyMap: boolean;
 }
 
-export const Command = ({ command, restricted }: CommandProps) => {
+export const Command = ({ command, restricted, useKeyMap }: CommandProps) => {
   return function(target: unknown, key: string, descriptor: PropertyDescriptor): void {
     if (!Reflect.hasMetadata('commands', target)) {
       Reflect.defineMetadata('commands', [], target);
@@ -16,9 +17,11 @@ export const Command = ({ command, restricted }: CommandProps) => {
     commands.push({
       command,
       restricted,
+      useKeyMap,
       key
     })
 
     Reflect.defineMetadata('commands', commands, target);
   }
 }
+
