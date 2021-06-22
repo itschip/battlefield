@@ -1,1 +1,1 @@
-// idk, do some deply stuff?
+// idk, do some deploy stuff?
