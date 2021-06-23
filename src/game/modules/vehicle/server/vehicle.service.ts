@@ -3,8 +3,13 @@ class _VehicleService {
     console.log('Vehicle service started');
   }
 
+  handleCreateVehicle(): number {
+    // something else
+  }
+
   handleSelectVehicle(src: number, vehicle: string) {
     // spawn a vehicle
+    const veh = CreateVehicle(GetHashKey(vehicle), )
   }
 }
 
